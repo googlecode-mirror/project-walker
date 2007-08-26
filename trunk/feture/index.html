@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link href="favicon.ico" rel="shortcut icon" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>[root@V2EX]#</title>
+	</head>
+	<body>
+		<div id="header">
+			<img id="logo" src="images/logo.png" alt="" />
+			<div id="head_bar">
+				<a class="white" href="signup.html">注册</a>&nbsp;|&nbsp;
+				<a class="white" href="login.html">登录</a>&nbsp;|&nbsp;
+				<a class="white" href="feture.html">新功能</a>
+			</div>
+		</div>
+
+		<div id="wrap">
+			<div id="main">
+				<div id="topnav" class="blank">
+					topnav
+				</div>
+
+				<div id="content" class="blank">
+					<h3 style="	color: #577DE7;">关于这个项目</h3>
+					<span class="gray" style="display:block; margin-top:20px;">... By ξ命令提示符 ... At 20, Jun 01:43 ... 12 次点击</span>
+					<div style="height:36px; overflow:hidden;"></div>
+					这个项目很多方面向V2EX学习，如界面UI和代码架构，因为不想使用现有的博客程序，因为感觉不适合自己，想像Livid那样写一个自己的博客程序，这在我看来是作为一个PHPer的最基本的东西。<br /><br />由于水平有限，这个项目可以说是用代码拼起来的，而且不支持IE，一个原因是目前还不想解决IE跟Firefox的兼容性问题，当然最大的原因还是因为不喜欢IE，甚至说是讨厌微软。刚学习Ajax不久，所以并没有很多地方用到了Ajax。同时使用了Apache的mod_rewrite模块，以使URL美观，也起到一点点安全性的作用：<br /><br />
+					<img class="i_img" src="http://www.n7money.cn/images/uploads/htaccess.jpg" alt".htaccess" /><br /><br />自己并不擅长写博客，只是想做一个展示自己的平台。把自己喜欢的东西分享给所有人。
+					到目前为止，整个项目还有很多地方没有完成，只有最基本的写文章和浏览文章的功能，而且像分类，按日期浏览的功能还没有完成。不管怎么样，这个项目不会像以前任何一个中途而费，并且会不断完善，等到合适的时候我打算将这个项目开源，这也是作为开源爱好者一个小小的想法。<br /><br />
+					部分Code:<br /><br />
+					<img class="i_img" src="http://www.n7money.cn/images/uploads/code.jpg" alt="Code" /><br /><br />
+					这个项目采用了Apache2、PHP5、MySQL5、Smarty的架构，以后可能会用到ZendFramework的Cache部分，以加快浏览速度，也可能会使用静态页面生成技术，还会逐步将一部分功能改为Ajax实现以及增加对UBB代码的支持...				
+				</div>
+
+             	<div id="post" class="blank">
+					<img src="images/page_white_edit.png" class="home" align="absmiddle">
+					<span>写日志</span>
+					<table class="form" border="0" cellpadding="0" cellspacing="0">
+						<form name="post" action="/post.php" method="post" id="write">
+							<tbody>
+								<tr>
+									<td align="right" width="100">标题</td>
+									<td align="left" width="400"><input class="sll" name="title" id="title" type="text"></td>
+								</tr>
+								<tr>
+									<td align="right" width="100">分类</td>
+									<td align="left" width="400">
+										<select class="sll" name="categ" id="categ" style="width:100px;">
+											<option>Linux</option>
+											<option>Apache</option>
+											<option>MySQL</option>
+											<option>金融与经济</option>
+											<option>About me</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td align="right" valign="top" width="100">日志内容</td>
+									<td align="left" width="600">
+										<textarea rows="20" class="ml" name="content" id="content"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td align="right" width="100">Tags</td>
+									<td align="left" width="400">
+										<input class="sll" name="tags" id="tags" type="text">
+										<span style="color:#999999;font-size:12px;">&nbsp;&nbsp;用逗号(',')隔开</span>
+									</td>
+								</tr>
+							</tbody>
+						</form>
+					</table>
+					<br />
+					<a style="margin-left:535px;" href="javascript:post();" class="btn">发布</a>
+				</div><!-- post end -->
+
+				<div id="flickr" class="blank" style="height:160px;">
+					<img src="images/flickr_logo.gif" alt="" style="border:0px; position:relative; top:5px;" />
+					<span style="color:#577DE7;">&nbsp;&nbsp;图片展示&nbsp;...</span>
+					<br /><br />
+					<li><a href="http://www.flickr.com/photos/11596914@N02/" target="_blank"><span>视觉摇滚</span><img src="images/flickr/1.jpg" alt="" />X-Japan</a></li>
+					<li><a href="http://www.flickr.com/photos/11596914@N02/" target="_blank"><span>Pop</span><img src="images/flickr/3.jpg" alt="" />滨崎步</a></li>
+					<li><a href="http://www.flickr.com/photos/11596914@N02/" target="_blank"><span>Hip-Hop</span><img src="images/flickr/9.jpg" alt="" />安室奈美惠</a></li>
+					<li><a href="http://www.flickr.com/photos/11596914@N02/" target="_blank"><span>Hip-Hop</span><img src="images/flickr/13.jpg" alt="" />安室奈美惠</a></li>
+					<li><a href="http://www.flickr.com/photos/11596914@N02/" target="_blank"><span>视觉摇滚</span><img src="images/flickr/7.jpg" alt="" />X-Japan</a></li>
+					<li><a href="http://www.flickr.com/photos/11596914@N02/" target="_blank"><span>Hip-Hop</span><img src="images/flickr/10.jpg" alt="" />安室奈美惠</a></li>
+					<li><a href="http://www.flickr.com/photos/11596914@N02/" target="_blank"><span>Pop</span><img src="images/flickr/6.jpg" alt="" />滨崎步</a></li>
+				</div><!-- flickr end -->
+
+				<div id="ing" class="blank">
+					<img src="images/hourglass.png" alt="" style="position:relative; top:3px;"/><span style="color:#577DE7;">&nbsp;&nbsp;最近在做什么&nbsp;...</span>
+					<div style="height:10px; overflow:hidden;"></div>
+					<ul class="ing">
+						<li><img src="images/1833_n.jpg" alt="" />&nbsp;&nbsp;<a style="color:#6666dd;"  class="var" href="#">听说中信的信用卡审核很严格，看来我惨了...</a>&nbsp;&nbsp;<span class="post_time">...&nbsp;1&nbsp;小时&nbsp;25&nbsp;分钟以前</span></li>
+						<li><img src="images/1833_n.jpg" alt="" />&nbsp;&nbsp;<a style="color:#6666dd;"  class="var" href="#">希望这个月能够去深圳，那才是我的理想之地</a>&nbsp;&nbsp;<span class="post_time">...&nbsp;1&nbsp;小时&nbsp;25&nbsp;分钟以前</span></li>
+						<li><img src="images/1833_n.jpg" alt="" />&nbsp;&nbsp;<a style="color:#990066;" class="var" href="#">Flickr图片展示完成</a>&nbsp;&nbsp;<span class="post_time">...&nbsp;1&nbsp;小时&nbsp;25&nbsp;分钟以前</span></li>
+						<li><img src="images/1833_n.jpg" alt="" />&nbsp;&nbsp;<a style="color:#999900;" class="var" href="#">想买苹果电脑了，用来设计网页简直是一流的</a>&nbsp;&nbsp;<span class="post_time">...&nbsp;1&nbsp;小时&nbsp;25&nbsp;分钟以前</span></li>
+						<li><img src="images/1833_n.jpg" alt="" />&nbsp;&nbsp;<a style="color:#339900;" class="var" href="#">Safari居然不支持中文输入</a>&nbsp;&nbsp;<span class="post_time">...&nbsp;1&nbsp;小时&nbsp;25&nbsp;分钟以前</span></li>
+						<li><img src="images/1833_n.jpg" alt="" />&nbsp;&nbsp;<a style="color:#0063dc;" class="var" href="#">这下兼容大部分浏览器了</a>&nbsp;&nbsp;<span class="post_time">...&nbsp;1&nbsp;小时&nbsp;25&nbsp;分钟以前</span></li>
+						<li><img src="images/1833_n.jpg" alt="" />&nbsp;&nbsp;<a style="color:#ff9900;" class="var" href="#">把照片从Google转移到Flickr</a>&nbsp;&nbsp;<span class="post_time">...&nbsp;1&nbsp;小时&nbsp;25&nbsp;分钟以前</span></li>
+						<li><img src="images/1833_n.jpg" alt="" />&nbsp;&nbsp;<a style="color:#330099;" class="var" href="#">需要重构了，PHP代码暂停编写</a>&nbsp;&nbsp;<span class="post_time">...&nbsp;3&nbsp;小时&nbsp;8&nbsp;分钟以前</span></li>
+					</ul>
+				</div><!-- ing end -->
+
+			</div><!-- main end -->
+
+			<div id="sidebar">
+				<div class="blank" style="height:135px;">
+					<img src="images/page_white_code.png" alt="" />
+					<span style="line-height:160%;">Tags</span>
+					<ul class="tags">
+						<li><a href="tags/">LAMP</a></li>
+						<li><a href="tags">设计</a></li>
+						<li><a href="tags">投资与理财</a></li>
+						<li><a href="tags">时尚消费</a></li>
+						<li><a href="tags">乱七八糟</a></li>
+						<li><a href="tags">我的音乐</a></li>
+					</ul>
+				</div>
+
+				<div class="blank" style="height:235px;">
+					<ul class="tools">
+						<li><img src="images/zoom.png" alt="" /><a href="search.html">&nbsp;搜索</a></li>
+						<li><img src="images/feed.png" alt="" /><a href="feed/walker.rss">&nbsp;RSS种子输出</a></li>
+						<li><img src="images/coins.png" alt="" /><a href="invest.html">&nbsp;投资与理财</a></li>
+						<li><img src="images/key.png" alt="" /><a href="login.html">&nbsp;登录</a></li>
+						<li><img src="images/key_go.png" alt="" /><a href="logout.html">&nbsp;登出</a></li>
+						<li><img src="images/application_osx_terminal.png" alt="" /><a href="manage.html">&nbsp;管理</a></li>
+						<li><img src="images/world_link.png" alt="" /><a href="#">&nbsp;链接</a></li>
+						<ul class="links">
+							<li><a href="#">link</a></li>
+							<li><a href="#">link</a></li>
+							<li><a href="#">link</a></li>
+							<li><a href="#">link</a></li>
+						</ul>
+					</ul>
+				</div>
+
+				<div class="blank" style="height:175px;">
+					<img src="images/music.png" alt="" /><span>&nbsp;最近&nbsp;Top</span>
+					<ul class="music">
+						<li><a href="#">All for you</a></li>
+						<li><a href="#">Alive</a></li>
+						<li><a href="#">Four Seasons</a></li>
+						<li><a href="#">Given Up</a></li>
+					</ul>
+				</div>
+			</div><!-- sidebar end -->
+
+			<div class="bug"></div>
+		</div><!-- wrap end -->
+
+		<div id="footer" class="blank">
+			<span class="gray">Copyright &copy; 2007-2010 <a href="about.html">ξ命令提示符</a> &lt;console_zhao@163.com&gt;</span>
+			<br />
+			<a class="var" style="color:#cccccc;" href="rules.html">规则</a> <span class="gray">|</small> 
+			<a class="var" style="color:#cccccc;" href="#">留言</a> <span class="gray">|</small> 
+			<a class="var" style="color:#cccccc;" href="about.html">About Me</a>
+		</div><!-- footer end -->
+	</body>
+</html>

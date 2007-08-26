@@ -1,0 +1,31 @@
+ErrorDocument 500 /errors/na.html
+ErrorDocument 403 /errors/403.html
+
+RewriteEngine on
+RewriteRule ^$ /walker.php?m=home [L]
+RewriteRule ^index.html$ /walker.php?m=home [L]
+RewriteRule ^signup.html$ /walker.php?m=signup [L]
+RewriteRule ^login.html$ /login.php [L]
+RewriteRule ^login$ /login.php [L]
+RewriteRule ^login/$ /login.php [L]
+RewriteRule ^logout.html$ /logout.php [L]
+RewriteRule ^about.html$ /walker.php?m=about [L]
+RewriteRule ^manage.html$ /walker.php?m=manage [L]
+RewriteRule ^ing.html$ /walker.php?m=ing [L]
+RewriteRule ^invest.html$ /walker.php?m=invest [L]
+
+RewriteRule ^view/([0-9]*).html$ /walker.php?m=view&id=$1 [L]
+
+RewriteRule ^edit/([0-9]*).html$ /walker.php?m=edit&id=$1 [L]
+
+RewriteRule ^tags/(.+)$ /walker.php?m=tags&tag=$1 [L]
+
+RewriteRule ^post.html$ /walker.php?m=post [L]
+
+RewriteRule ^feed/walker.rss$ /feed.php?m=home [L]
+RewriteRule ^feed/([0-9]*).rss$ /feed.php?m=view&id=$1 [L]
+
+RewriteRule ^manual/freebsd/$ /manual/freebsd/ch01.htm [L]
+
+php_flag magic_quotes_gpc off
+php_flag register_globals off

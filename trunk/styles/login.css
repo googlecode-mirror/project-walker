@@ -1,0 +1,116 @@
+/* Project Walker
+ *
+ * @author always.8 <always.8@gmail.com>
+ * @version $Id: login.css 0 2007-06-24 09:10:15Z always.8 $
+ * @copyright http://www.n7money.cn/
+ *
+ * Thanks to Livid
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+body, html {
+padding: 0px;
+margin: 0px;
+background-color: #EFEFEF;
+}
+
+#main {
+padding: 50px 0px 20px 0px;
+width: 99%;
+font-family: Verdana, "Lucida Grande", "Lucida Sans", Hei, sans;
+}
+
+#v2ex {
+padding: 20px 20px 20px 20px;
+width: 460px;
+background-color: #FFF;
+border: 5px solid #CFCFCF;
+}
+
+#info {
+padding: 5px;
+font-size: 12px;
+margin: 0px 0px 10px 0px;
+color: #333;
+background-color: #FFFFEF;
+border: 2px solid #FFC;
+}
+
+#logout {
+color: #000;
+font-size: 12px;
+}
+
+.title {
+font-size: 14px;
+color: #666;
+margin-bottom: 20px;
+}
+
+.login_form_t td {
+font-size: 12px;
+color: #333;
+}
+
+input.line {
+width: 300px;
+font-size: 15px;
+padding: 3px;
+background-color: #FFF;
+color: #333;
+border: 1px solid #999;
+}
+
+input.line:focus {
+width: 300px;
+font-size: 15px;
+padding: 3px;
+background-color: #FFF;
+color: #333;
+border: 1px solid #0C0;
+}
+
+.tip {
+color: #CCC;
+}
+
+form {
+padding: 0px;
+margin: 0px;
+}
+
+#bottom {
+padding: 10px 10px 10px 10px;
+font-family: Verdana, "Lucida Grande", "Lucida Sans", sans;
+font-size: 10px;
+}
+
+a:link, a:visited, a:active {
+color: #577DE4;
+text-decoration: none;
+}
+
+a:hover {
+background-color: #577DE4;
+color: #FFF;
+text-decoration: none;
+}
+
+li {
+color: #CCC;
+list-style: square;
+padding: 0px 0px 5px 0px;
+margin: 0px 0px 0px 2em;
+}
