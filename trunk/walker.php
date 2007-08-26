@@ -66,31 +66,6 @@ mysql_query("SET COLLATION_CONNECTION='utf8_general_ci'");
 
 $user = $_SESSION['user'];
 
-/*$frontendOptions = array(
-	'lifeTime' => 7200,
-	'automaticSerialization' => true
-);
-
-$backendOptions = array(
-	'cacheDir' => WALKER_PREFIX . '/tmp/cache/'
-);
-
-$this->cache = Zend_Cache::factory('Core', 'File', $frontendOptions, $backendOptions);*/
-
-/*if(!$post = $this->cache->load('index'))
-{
-	$result = $this->db->query('SELECT * FROM walker_post');
-	$post = $result->fetchAll();
-	$this->cache->save($post, 'index');
-	$this->view->assign('post', $post);
-	$this->view->display('index.tpl');
-}
-else
-{
-	$this->view->assign('post', $post);
-	$this->view->display('index.tpl');
-}*/
-
 if(isset($_GET['m']))
 {
 	$m = strtolower(trim($_GET['m']));
@@ -104,29 +79,6 @@ switch($m)
 {
 default:
 case 'home':
-	/* Sorry, site do not support IE browser */
-	/*if(strstr($_SERVER['HTTP_USER_AGENT'], 'MSIE'))
-	{
-		echo '<?xml version="1.0" encoding="utf-8"?>';
-		echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"';
-		echo '"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">';
-		echo '<html xmlns="http://www.w3.org/1999/xhtml">';
-		echo '<head>';
-		echo '<meta http-equiv="content-type" content="text/html; charset=utf-8" />';
-		echo '<title>ξ命令提示符</title>';
-		echo '</head>';
-		echo '<body>';
-		echo '<span style="font-size:18px; color:#9c0000; display:block; margin-top:200px; margin-left:150px; ';
-		echo 'width:700px; height:25px; border:1px solid #eee;">很抱歉，本站不提供对IE浏览器的支持,';
-		echo '为了更好的体验请使用Firefox，谢谢！</span><br />';
-		echo '<span style="margin-left:320px;">';
-		echo '<a href="http://www.mozilla.org.cn">下载Firefox</a>';
-		echo '</span>';
-		echo '</body>';
-		echo '</html>';
-	}
-	else
-	{*/
 	$result = mysql_query('SELECT * FROM walker_post');
 	$row = mysql_fetch_array($result, MYSQL_ASSOC);
 	mysql_free_result($result);
@@ -138,7 +90,6 @@ case 'home':
 		'hits' => $row[post_hits],
 		'contents' => $row[post_content]));
 	$view->display('index.tpl');
-	//}
 	break;
 
 case 'view':
@@ -167,7 +118,6 @@ case 'edit':
 		array('title' => $row['post_title'],
 		'tags' => $row[post_tags],
 		'contents' => $row[post_content]));
-	//print_r($row[post_content]);
 	$view->display('edit.tpl');
 	break;
 
