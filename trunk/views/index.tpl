@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link href="favicon.ico" rel="shortcut icon" />
 		<link rel="stylesheet" type="text/css" href="/styles/{$style|default:"style.css"}" />
 		<link rel="stylesheet" type="text/css" href="/styles/extend.css" />
 		<link rel="stylesheet" type="text/css" href="/styles/ifm.css" />

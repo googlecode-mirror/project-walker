@@ -41,6 +41,8 @@ class Flickr{
 	}
 }
 
+/* test
 $test = Flickr::output('Flickr.xml');
 print_r($test);
+ */
 ?>
