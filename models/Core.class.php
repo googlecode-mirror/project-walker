@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
  * @author always.8 <always.8@gmail.com>
- * @version $Id: Core.class.php 0 2007-09-25 12:38:09Z always.8 $
+ * @version $Id: Core.class.php 0 2007-09-25 12:40:00Z always.8 $
  * @copyright http://www.n7money.cn/
  * @package Core
  */
@@ -48,8 +48,8 @@ class Core
 		echo '<link rel="alternate" type="application/rss+xml" title="ξ命令提示符 RSS" href="http://www.n7money.cn/feed/walker.rss" />' . "\n";
 		echo '<link rel="stylesheet" type="text/css" href="/themes/' . THEMES . '/styles/style.css" />' . "\n";
 		echo '<link rel="stylesheet" type="text/css" href="/themes/' . THEMES . '/styles/extra.css" />' . "\n";
-		echo '<script type"text/javascript" src="/themes/' . THEMES . '/scripts/prototype.js"></script>';
-		echo '<script type"text/javascript" src="/themes/' . THEMES . '/scripts/scriptaculous.js?load=effects,dragdrop"></script>';
+		echo '<script type"text/javascript" src="/themes/' . THEMES . '/scripts/prototype.js"></script>' . "\n";
+		echo '<script type"text/javascript" src="/themes/' . THEMES . '/scripts/scriptaculous.js?load=effects,dragdrop"></script>' . "\n";
 		echo '<title>' . $title . '</title>' . "\n";
 		echo '</head>' . "\n";
 		echo '<body>' . "\n";
