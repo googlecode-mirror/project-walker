@@ -1,0 +1,39 @@
+/* 
+ * 
+ * @author always.8 <always.8@gmail.com>
+ * @version $Id: extra.css 0 2007-09-22 07:01:42Z always.8 $
+ * @copyright http://www.n7money.cn/
+ */ 
+div.header{
+	background-color:#F0F0F0;
+	border-bottom:1px solid #CCCCCC;
+	color:#666666;
+	font-size:12px;
+	font-weight:bold;
+	padding:4px;
+}
+
+ul.rules{
+	list-style:circle;
+	padding-left:45px;
+	line-height:160%;
+}
+
+ul.rules li{
+	margin-top:10px;
+}
+
+div#rules{
+	width:655px;
+	+width:735px;
+	padding:7px 45px 12px 45px;
+	+padding-top:24px;
+	line-height:160%;
+	color:#333333;
+	font-size:12px;
+	line-height:20px;
+}
+
+div#rules h3{
+	font-size:18px;
+}
