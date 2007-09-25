@@ -1,12 +1,10 @@
 <?php
-/* Project Walker
+/** 
  *
  * @author always.8 <always.8@gmail.com>
- * @version $Id: Flickr.class.php 0 2007-06-24 09:10:15Z always.8 $
+ * @version $Id: Flickr.class.php 0 2007-09-12 12:18:34Z always.8 $
  * @copyright http://www.n7money.cn/
- *
- * Thanks to Livid
- *
+ * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -23,9 +21,12 @@
  */
 
 class Flickr{
-	public static function output($xml)
+	public static function output($xml, $shulffle = true, $count = 7)
 	{
-		$xml = simplexml_load_file($xml);
+		if(!$xml = simplexml_load_file($xml))
+		{
+			return false;
+		}
 
 		$flickr = array();
 		$i = 0;
@@ -37,12 +38,14 @@ class Flickr{
 			$flickr[$i]['link'] = strval($node->link);
 			$i++;
 		}
+		/* Shuffle mode */
+		if($shulffle == true)
+		{
+			shuffle($flickr);
+		}
+		/* Results of the $count restrictions */
+		array_splice($flickr, $count);
 		return $flickr;
 	}
 }
-
-/* test
-$test = Flickr::output('Flickr.xml');
-print_r($test);
- */
 ?>

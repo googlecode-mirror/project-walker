@@ -1,12 +1,7 @@
 <?php
-/* Project Walker
+/** 
  *
- * @author always.8 <always.8@gmail.com>
- * @version $Id: post.php 0 2007-06-24 09:10:15Z always.8 $
- * @copyright http://www.n7money.cn/
- *
- * Thanks to Livid
- *
+ * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -20,16 +15,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * @author always.8 <always.8@gmail.com>
+ * @version $Id: post.php 0 2007-09-21 18:02:04Z always.8 $
+ * @copyright http://www.n7money.cn/
+ * @package 
  */
-
-require 'config.php';
-session_start();
-
-/* Init */
-ini_set('include_path', 'libs/:'. ini_get('include_path'));
-date_default_timezone_set(TIME_ZONE);
-
 /* Init Databases */
+session_start();
+require_once 'models/Post.class.php';
+require_once 'models/utils.php';
+require_once 'config.php';
+
 $db = mysql_connect(WALKER_DB_HOST, WALKER_DB_USERNAME, WALKER_DB_PASSWORD)
 	or die('Could not connect: ' . mysql_error());
 mysql_select_db(WALKER_DB_NAME);
@@ -37,27 +34,66 @@ mysql_query('SET NAMES utf8');
 mysql_query('SET CHARACTER SET utf8');
 mysql_query("SET COLLATION_CONNECTION='utf8_general_ci'");
 
-if(isset($_POST['title']) && isset($_POST['categ']) && isset($_POST['content']) && isset($_POST['tags']))
+if(isset($_POST['method']))
 {
-	$title = $_POST['title'];
-	$content = $_POST['content'];
-	$tags = $_POST['tags'];
-	$create = time();
+	$post = new Post;
 
-	if($_POST['method'] == 'post')
+	switch($_POST['method'])
 	{
-	$sql = "INSERT INTO console_walker.walker_post (`post_id` ,`post_cid` ,`post_title` ,`post_create` ,`post_uid` ,`post_content` ,`post_hits` ,`post_desc` ,`post_tags` ,`post_lastmodify`)VALUES (NULL , '1', '$title', '$create', '1', '$content', '0', ' ', '$tags', '$create')";
-	mysql_query($sql);
-	$id = intval(mysql_insert_id());
-	$_SESSION['post_id'] = $id + 1;
-	}
-	else if($_POST['method'] == 'update')
-	{
-	}
+	case 'new':
+		check_login();
+		$post->setTitle($_POST['title']);
+		$post->setAuthor($_SESSION['user']);
+		$post->setTags($_POST['tags']);
+		$post->setReply($_POST['reply']);
+		$post->setShow($_POST['show']);
+		$post->setContent($_POST['content']);
+		$id = $post->newTopic();
+		mysql_close($db);
+		echo 'ok';
+		//header("Location: http://www.n7money.cn/view/$id.html");
+		break;
 
-	$fp = fopen('post.txt', 'a');
-	fwrite($fp, $_POST['method'] . '<br />' . $_POST['categ'] . '<br />' . $_POST['content'] . '<br />' . $sql);
-	fclose($fp);
+	case 'modify':
+		check_login();
+		$post->setId(intval($_POST['topic_id']));
+		$post->setTitle($_POST['title']);
+		$post->setCreated($_POST['created']);
+		$post->setAuthor($_SESSION['user']);
+		$post->setReply($_POST['reply']);
+		$post->setShow($_POST['show']);
+		$post->setContent($_POST['content']);
+		$post->setTags($_POST['tags']);
+		$post->Modify();
+		//echo $_POST['content'];
+		mysql_close($db);
+		echo 'ok';
+		break;
+
+	case 'reply':
+		$post->Reply(array(
+			'pid' => intval($_POST['pid']),
+			'user' => $_SESSION['user'],
+			'content' => strval($_POST['reply_content']),
+			'desc' => '地球'
+		));
+		echo 'ok';
+		break;
+	default:;
+	}
 }
-mysql_close($db);
+elseif(isset($_GET['m']) && isset($_SESSION['user']) && $_SESSION['user'] != 'guest')
+{
+	if($_GET['m'] == 'rm' && $_GET['id'])
+	{
+		$user = $_SESSION['user'];
+		//echo "<script type=\"text/javascript\">alert('$user');</script>";
+		//echo $_SESSION['user'];
+		$id = intval($_GET['id']);
+		$sql = "DELETE FROM `walker_post` WHERE post_id = $id";
+		mysql_query($sql);
+	}
+	mysql_close($db);
+	header("Location: http://www.n7money.cn/manage.html");
+}
 ?>
