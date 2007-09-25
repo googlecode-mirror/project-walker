@@ -1,5 +1,6 @@
 ErrorDocument 500 /errors/na.html
 ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
 
 RewriteEngine on
 RewriteRule ^$ /walker.php?m=home [L]
