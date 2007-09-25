@@ -18,7 +18,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
  * @author always.8 <always.8@gmail.com>
- * @version $Id: walker.php 0 2007-09-22 06:29:14Z always.8 $
+ * @version $Id: walker.php 0 2007-09-25 14:51:29Z always.8 $
  * @copyright http://www.n7money.cn/
  */
 
