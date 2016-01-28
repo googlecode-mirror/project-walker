@@ -1,0 +1,3 @@
+walker是一个开源的博客程序，遵循GNU通用公共许可证（GPL v2），很多地方源于Livid的Babel（[V2EX](http://www.v2ex.com)），在此非常感谢Livid，个人非常喜欢V2EX，作为一个PHPer，开发这个程序一方面是由于爱好，另一方面也是把它作为面试的作品。
+
+这个项目采用了Apache2、PHP5、MySQL4/5、Smarty的架构，与Babel一样使用了Apache的mod\_rewrite模块，以后可能会用到ZendFramework的Cache部分，以加快浏览速度，也可能会使用静态页面生成技术，还会逐步将一部分功能改为Ajax实现以及增加对UBB代码的支持...
